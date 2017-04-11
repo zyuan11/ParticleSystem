@@ -23,8 +23,10 @@ public:
 		m_emitter = position;
 	}
 
+	
 	void update(sf::Time elapsed)
 	{
+
 		for (std::size_t i = 0; i < m_particles.size(); ++i)
 		{
 			// update the particle lifetime
