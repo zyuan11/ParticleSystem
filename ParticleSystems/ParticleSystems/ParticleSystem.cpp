@@ -14,7 +14,8 @@ public:
 		m_particles(count),
 		m_vertices(sf::Points, count),
 		m_lifetime(sf::seconds(3)),
-		m_emitter(0, 0)
+		m_emitter(0, 0),
+		m_gravity(1, 100)
 	{
 	}
 
@@ -36,6 +37,10 @@ public:
 			// if the particle is dead, respawn it
 			if (p.lifetime <= sf::Time::Zero)
 				resetParticle(i);
+
+			// update the position of the corresponding vertex
+			p.velocity += m_gravity * elapsed.asSeconds();
+			
 
 			// update the position of the corresponding vertex
 			m_vertices[i].position += p.velocity * elapsed.asSeconds();
@@ -84,4 +89,5 @@ private:
 	sf::VertexArray m_vertices;
 	sf::Time m_lifetime;
 	sf::Vector2f m_emitter;
+	sf::Vector2f m_gravity;
 };
