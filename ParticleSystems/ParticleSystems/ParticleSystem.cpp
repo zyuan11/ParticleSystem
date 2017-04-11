@@ -5,6 +5,7 @@
 #include <SFML/System.hpp>
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
+#include <iostream>
 
 class ParticleSystem : public sf::Drawable, public sf::Transformable
 {
@@ -14,8 +15,9 @@ public:
 		m_particles(count),
 		m_vertices(sf::Points, count),
 		m_lifetime(sf::seconds(3)),
-		m_emitter(0, 0),
-		m_gravity(1, 100)
+		m_gravity(0, 100),
+		m_emitter(0, 0)
+		
 	{
 	}
 
@@ -27,9 +29,10 @@ public:
 	
 	void update(sf::Time elapsed)
 	{
-
+		
 		for (std::size_t i = 0; i < m_particles.size(); ++i)
 		{
+			
 			// update the particle lifetime
 			Particle& p = m_particles[i];
 			p.lifetime -= elapsed;
@@ -39,8 +42,10 @@ public:
 				resetParticle(i);
 
 			// update the position of the corresponding vertex
+			//p.velocity.x += m_gravity.x * elapsed.asSeconds();
+			//p.velocity.y += m_gravity.y * elapsed.asSeconds();
 			p.velocity += m_gravity * elapsed.asSeconds();
-			
+
 
 			// update the position of the corresponding vertex
 			m_vertices[i].position += p.velocity * elapsed.asSeconds();
