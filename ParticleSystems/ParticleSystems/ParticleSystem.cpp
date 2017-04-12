@@ -12,14 +12,16 @@ class ParticleSystem : public sf::Drawable, public sf::Transformable
 {
 public:
 
-	ParticleSystem(unsigned int count) :
+	ParticleSystem(unsigned int count, float i_anlge_factor, float i_speed_factor) :
 		m_particles(count),
 		m_vertices(sf::Points, count),
 		m_vertices2(sf::Points, count * 2),
 		m_lifetime(sf::seconds(3)),
 		m_gravity(0, 100),
 		m_emitter(0, 0),
-		m_emitter2(50, 50)
+		m_emitter2(50, 50),
+		m_angle_factor(i_anlge_factor),
+		m_speed_factor(i_speed_factor)
 	{
 	}
 
@@ -98,21 +100,6 @@ private:
 		target.draw(m_vertices2, states);
 	}
 
-	/*
-	virtual void draw2(sf::RenderTarget& target, sf::RenderStates states) const
-	{
-		// apply the transform
-		states.transform *= getTransform();
-
-		// our particles don't use a texture
-		states.texture = NULL;
-		//states.texture = &m_texture;
-
-		// draw the vertex array
-		target.draw(m_vertices2, states);
-	}
-	*/
-
 private:
 
 	struct Particle
@@ -125,22 +112,14 @@ private:
 	{
 		// for emitter 1
 		// give a random velocity and lifetime to the particle
-		float angle = (std::rand() % 360) * 3.14f / 180.f;
-		float speed = (std::rand() % 50) + 50.f;
+		float angle = (std::rand() % 360) * 3.14f / 180.f * m_angle_factor;
+		float speed = (std::rand() % 50) + 50.f * m_speed_factor;
 		m_particles[index].velocity = sf::Vector2f(std::cos(angle) * speed, std::sin(angle) * speed);
 		m_particles[index].lifetime = sf::milliseconds((std::rand() % 2000) + 1000);
 
 		// reset the position of the corresponding vertex
 		m_vertices[index].position = m_emitter;
 		
-		// for emitter 2
-		// give a random velocity and lifetime to the particle
-		float angle2 = (std::rand() % 360) * 3.14f / 180.f;
-		float speed2 = (std::rand() % 50) + 50.f;
-		m_particles[index].velocity = sf::Vector2f(std::cos(angle2) * speed2, std::sin(angle2) * speed2);
-		m_particles[index].lifetime = sf::milliseconds((std::rand() % 2000) + 1000);
-
-		// reset the position of the corresponding vertex
 		m_vertices2[index].position = m_emitter2;
 	}
 
@@ -152,4 +131,8 @@ private:
 	sf::Vector2f m_emitter2;
 	sf::Vector2f m_gravity;
 	sf::Texture m_texture;
+
+	//for multiple particle system
+	float m_angle_factor;
+	float m_speed_factor;
 };
