@@ -6,16 +6,22 @@ int main()
 {
 	// create the window
 	sf::RenderWindow window(sf::VideoMode(512, 256), "Particles");
-
+	sf::Texture redTexture;
+	sf::Sprite sprite;
 	
 	// create a clock to track the elapsed time
 	sf::Clock clock;
 
 
 	// create the particle system
-	int NumOfParticles = 1000;
+	int NumOfParticles = 200;
 	ParticleSystem *particles = new ParticleSystem(NumOfParticles);
+	if (!redTexture.loadFromFile("blueTexture.png"))
+		return -1;
+	sprite.setTexture(redTexture);
+	sprite.setPosition(sf::Vector2f(0, 0));
 
+	particles->setTexture(redTexture);
 
 	// run the main loop
 	while (window.isOpen())
@@ -47,7 +53,7 @@ int main()
 		// make the particle system emitter follow the mouse
 		sf::Vector2i mouse = sf::Mouse::getPosition(window);
 		particles->setEmitter(window.mapPixelToCoords(mouse));
-
+		
 		// update it
 		sf::Time elapsed = clock.restart();
 		particles->update(elapsed);
@@ -55,6 +61,7 @@ int main()
 		// draw it
 		window.clear();
 		window.draw(*particles);
+		//window.draw(sprite);
 		window.display();
 	}
 

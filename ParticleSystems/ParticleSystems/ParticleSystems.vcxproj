@@ -155,6 +155,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="blueTexture.png" />
+    <Image Include="C:\Users\Jun\Desktop\redTexture.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
