@@ -29,5 +29,14 @@
     <Image Include="C:\Users\Jun\Desktop\redTexture.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="smoke.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="blue.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="colorful.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
