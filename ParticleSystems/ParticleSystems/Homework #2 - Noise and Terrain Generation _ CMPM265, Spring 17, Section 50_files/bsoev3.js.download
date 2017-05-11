@@ -1,0 +1,41 @@
+var bsoev3NavigationVisible = false;
+var bsoev3NavigationButton = false;
+var bsoev3NavigationWrapper = false;
+var bsoev3NavigationWrapperStyle = false;
+
+function bsoev3ToggleNavigation(event) {
+  if (bsoev3NavigationVisible) {
+    console.log("Hiding Navigation");
+
+    bsoev3NavigationVisible = false;
+
+    bsoev3NavigationWrapperStyle.display = "";
+  } else {
+    console.log("Showing Navigation");
+
+    bsoev3NavigationVisible = true;
+
+    bsoev3NavigationWrapperStyle.display = "block";
+  }
+}
+
+function bsoev3Load() {
+  bsoev3NavigationButton = document.getElementById("navigation-button");
+  bsoev3NavigationWrapper = document.getElementById("navigation-wrapper");
+  bsoev3NavigationWrapperStyle = bsoev3NavigationWrapper.style;
+
+  bsoev3NavigationButton.addEventListener(
+    "click",
+    bsoev3ToggleNavigation
+  );
+
+  bsoev3NavigationButton.addEventListener(
+    "tap",
+    bsoev3ToggleNavigation
+  );
+}
+
+window.addEventListener(
+  "load",
+  bsoev3Load
+);

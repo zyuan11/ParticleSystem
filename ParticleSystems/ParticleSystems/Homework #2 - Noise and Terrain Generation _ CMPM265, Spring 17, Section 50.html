@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<!-- saved from url=(0097)https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework/homework-2-noise-and-terrain-generation -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr" class="js"><head profile="http://www.w3.org/1999/xhtml/vocab"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<link rel="shortcut icon" href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/sites/all/themes/bsoev3/favicon.ico" type="image/vnd.microsoft.icon">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="last-modified" content="Wed, 12 Apr 2017 10:53:56 -0700">
+<link rel="shortlink" href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/node/7">
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<link rel="canonical" href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework/homework-2-noise-and-terrain-generation">
+<meta name="author" content="ejw">
+  <title>Homework #2 - Noise and Terrain Generation | CMPM265, Spring 17, Section 50</title>
+  <style type="text/css" media="all">
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/system/system.base.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/system/system.menus.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/system/system.messages.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/system/system.theme.css?oo7c0a");
+</style>
+<style type="text/css" media="all">
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/comment/comment.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/field/theme/field.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/node/node.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/search/search.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/user/user.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/modules/forum/forum.css?oo7c0a");
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/sites/all/modules/views/css/views.css?oo7c0a");
+</style>
+<style type="text/css" media="all">
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/sites/all/modules/ctools/css/ctools.css?oo7c0a");
+</style>
+<style type="text/css" media="all">
+@import url("https://cmpm265-spring17-50.courses.soe.ucsc.edu/sites/all/themes/bsoev3/bsoev3.css?oo7c0a");
+</style>
+  <script type="text/javascript" src="./Homework #2 - Noise and Terrain Generation _ CMPM265, Spring 17, Section 50_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Homework #2 - Noise and Terrain Generation _ CMPM265, Spring 17, Section 50_files/jquery.once.js.download"></script>
+<script type="text/javascript" src="./Homework #2 - Noise and Terrain Generation _ CMPM265, Spring 17, Section 50_files/drupal.js.download"></script>
+<script type="text/javascript" src="./Homework #2 - Noise and Terrain Generation _ CMPM265, Spring 17, Section 50_files/bsoev3.js.download"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"bsoev3","theme_token":"1UI7SWRBXUxJAwnqk-71pEp4gRjpr9dadOG0C5DwPOo","js":{"misc\/jquery.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/themes\/bsoev3\/bsoev3.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/bsoev3\/bsoev3.css":1}},"urlIsAjaxTrusted":{"\/homework\/homework-2-noise-and-terrain-generation":true}});
+//--><!]]>
+</script>
+</head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-7 node-type-web-page">
+  <div id="skip-link">
+    <a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework/homework-2-noise-and-terrain-generation#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+
+<!-- begin page -->
+
+<div id="site-wrapper">
+<div id="header">
+<div id="header-logo">
+<a href="https://www.soe.ucsc.edu/"><img src="./Homework #2 - Noise and Terrain Generation _ CMPM265, Spring 17, Section 50_files/logo.png"></a>
+</div>
+<div id="header-name-and-slogan">
+<div id="header-name">
+<a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/">CMPM265, Spring 17, Section 50</a>
+</div>
+<div id="header-slogan">
+Generative Methods
+</div>
+</div>
+</div>
+<div id="middle-wrapper">
+<div id="navigation-button-wrapper">
+<div id="navigation-button">
+Navigation
+</div>
+</div>
+<div id="navigation-wrapper">
+  <div class="region region-menu">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+
+
+<div class="content">
+<ul class="menu"><li class="first leaf"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/home">Home</a></li>
+<li class="leaf"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/syllabus">Syllabus</a></li>
+<li class="expanded active-trail"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework" class="active-trail">Homework</a><ul class="menu"><li class="first leaf"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework/homework-generation-information" title="">Homework General Information</a></li>
+<li class="leaf"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework/homework-1-particle-systems">Homework #1 - Particle Systems</a></li>
+<li class="last leaf active-trail"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework/homework-2-noise-and-terrain-generation" class="active-trail active">Homework #2 - Noise and Terrain Generation</a></li>
+</ul></li>
+<li class="leaf"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/search" title="">Search</a></li>
+<li class="last leaf"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/grading">Grading</a></li>
+</ul>
+</div>
+</div>
+  </div>
+
+  <div class="region region-sidebar-first">
+    <div id="block-search-form" class="block block-search">
+
+
+<div class="content">
+<form action="https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework/homework-2-noise-and-terrain-generation" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input title="Enter the terms you wish to search for." type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Search" class="form-submit"></div><input type="hidden" name="form_build_id" value="form-_PBxlPxdkOcKEFhhRlU3kldaLDDEV0lEehQu13ZqbzY">
+<input type="hidden" name="form_id" value="search_block_form">
+</div>
+</div></form>
+</div>
+</div>
+  </div>
+
+
+</div>
+<div id="body-wrapper">
+<div class="breadcrumb"><a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/homework" class="active-trail">Homework</a></div><h1>Homework #2 - Noise and Terrain Generation</h1>
+<div id="content">
+<div id="content-tabs">
+</div>
+  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+
+<div class="content">
+<div id="node-7" class="node node-web-page clearfix">
+
+  
+      
+  
+  <div class="content">
+    <div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><div class="tex2jax"><p style="font-size: 14.4px;">In this assignment you will use a noise function to create a tile-based terrain map suitable for a 2D game.</p>
+<p style="font-size: 14.4px;">Students must use the C++ language and the <a href="https://www.sfml-dev.org/">SFML library</a>&nbsp;(or similar -- check with instructor first) for this homework assignment.&nbsp;</p>
+<h3>Resources</h3>
+<p style="font-size: 14.4px;">The following resources will be especially helpful for this assignment:</p>
+<p style="font-size: 14.4px;"><a href="http://libnoise.sourceforge.net/">libnoise</a>: a C++ noise library, including noiseutils, which has built in functions for terrain generation (see especially&nbsp;<a href="http://libnoise.sourceforge.net/tutorials/tutorial3.html">Tutorial 3</a>&nbsp;on terrain generation).</p>
+<p style="font-size: 14.4px;">SFML: see the <a href="https://www.sfml-dev.org/tutorials/2.4/graphics-vertex-array.php">TileMap example</a>&nbsp;in the tutorial on&nbsp;<em>Designing your own entities with vertex arrays</em></p>
+<p style="font-size: 14.4px;">This assignment can be viewed as requiring the careful combination of the above tutorials.</p>
+<h3>Overview&nbsp;</h3>
+<p style="font-size: 14.4px;">This assignment has several conceptual pieces:</p>
+<p style="font-size: 14.4px;">Input:</p>
+<p style="font-size: 14.4px;">Height and width of the tile array</p>
+<p style="font-size: 14.4px;">A tileset giving graphic tiles representing the different land types (along with its tilesize, such as 16x16 or 32x32). You may choose any tileset you wish, though&nbsp;<a href="http://opengameart.org/sites/default/files/tileset_1.png">this tileset</a>&nbsp;will work well for this assignment (see&nbsp;<a href="http://opengameart.org/content/worldmapoverworld-tileset">containing page</a>&nbsp;for more information).&nbsp;<a href="http://opengameart.org/">OpenGameArt.or</a>g has many tileset examples.</p>
+<p style="font-size: 14.4px;">Processing steps:</p>
+<p style="font-size: 14.4px;">1. Create an array of noise values. Using a noise function (Perlin noise or other), generate an array of floating point numbers (typically doubles in C++). This involves choosing a region in noise space to sample from. This is covered in the section, "Generating a Terrain Height Map" in libnoise&nbsp;<a href="http://libnoise.sourceforge.net/tutorials/tutorial3.html">Tutorial #3</a>.</p>
+<p style="font-size: 14.4px;">2. Converting this noise array into (typically integer) values that represent the different terrain types. For example, noise values between -1.00 and 0.10 might map to water, which is represented by the integer value 1.&nbsp;</p>
+<p style="font-size: 14.4px;">3. Rendering the integer array into a visual representation on screen. This involves creating a rectangular array of rectangles the size of each tile, and then texturing each rectangle with the appropriate tile texture. For example, if the tile at (5,5) has integer value of 1 (water), then the water texture from the tileset should be applied to the rectangle representing tile 5,5. See the&nbsp;<a href="http://www.sfml-dev.org/tutorials/2.3/graphics-vertex-array.php">TileMap example</a>&nbsp;for how to approach this using SFML.</p>
+<p style="font-size: 14.4px;">4. Once you have a working terrain generator, add a keyboard mapping to change the seed for the generator (this will have the effect of changing the generated terrain).&nbsp;noise::module::Perlin has a&nbsp;<a href="http://libnoise.sourceforge.net/docs/classnoise_1_1module_1_1Perlin.html">setSeed() function</a>&nbsp;that will do this.</p>
+<p style="font-size: 14.4px;">Performing the above 4 steps is sufficient for a B+ (passing grade) on this assignment. For an A grade do #5 <em>or</em> #6 below, and for an A+ grade do #5 <em>and</em> #6.</p>
+<p style="font-size: 14.4px;">5. Most tilesets have specific tiles to handle transitions between terrain types, to create a better looking map that doesn't have harsh transitions on tile boundaries. Add a post-processing step that analyzes your integer tile array and adds transition tiles as appropriate. This will involve horizontal, vertical, and corner transitions. Your chosen tileset may not have tiles for every possible transition type, so only implement transitions for supported types. It is not necessary to create new transition tile graphics.</p>
+<p style="font-size: 14.4px;">6. Most noise libraries are able to generate noise in 3 or more dimensions. This tile generation exercise only uses two dimensions, leaving at least one free for other uses. Create a loop that will iterate through this third dimension, treating it as time. For each new third dimension value, regenerate the tile map (including tile transitions). This will give the impression of animating the terrain as it changes over geologic time. It is recommended to add interative controls to adjust the time between updates, and the step size for moving through the third dimension.</p>
+<h3>Submission</h3>
+<ul style="font-size: 14.4px;">
+<li>Share your source code&nbsp;with me on GitHub.</li>
+<li>Also submit an image that is representative of the kind of terrain tilemap your generator creates into the shared Google Drive folder for the assignment.</li>
+<li>For #5, also submit a video showing animation of your generated terrain tilemap by editing the "Homework #2" shared Google doc.</li>
+</ul>
+<h2>Resources</h2>
+<p style="font-size: 14.4px;">You might find it useful to use a tile editor program like Tiled (<a href="http://www.mapeditor.org/">http://www.mapeditor.org/</a>) to get the coordinates/IDs of specific tiles in a tile map.</p>
+<p style="font-size: 14.4px;">This article has some discussion on how to achieve nice looking tile transitions: http://www.squidi.net/three/entry.php?id=166.</p>
+<p style="font-size: 14.4px;">Some sample tilesets that have good terrain type transition tiles can be found at:</p>
+<ul style="font-size: 14.4px;">
+<li><a href="http://painhurt.deviantart.com/art/RPG-Maker-VX-ModernRTP-TileA2-206955520">RPG Maker VX ModernRTP</a> TileA2 by painhurt on DeviantArt</li>
+<li><a href="http://pixeljoint.com/pixelart/2759.htm">tileset01</a> by grave on Pixeljoint</li>
+<li><a href="http://pixeljoint.com/pixelart/24427.htm">Tiamat II</a> by Zenobia on Pixeljoint</li>
+</ul>
+<p>Or, consider creating a dungeon as&nbsp;your "terrain" for extra challenge, using this pixel art tileset: <a href="https://colinbrown.itch.io/templedungeon">Pixel Tileset: Temple / Dungeon</a> by Colin Brown on itch.io.</p></div></div></div></div>  </div>
+
+  
+  
+</div>
+
+</div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer-wrapper">
+<div id="footer">
+<div id="footer-left">
+<a href="http://www.ucsc.edu/">UCSC</a></div>
+<div id="footer-center">
+<p id="footer-contact">This site is maintained by: <a href="mailto:ejw@ucsc.edu">ejw@ucsc.edu</a></p><p id="footer-address">UC Santa Cruz, 1156 High Street, Santa Cruz, CA 95064</p><p id="footer-copyright">Copyright © 2017 The Regents of the University of California. All rights reserved.</p></div>
+<div id="footer-right">
+  <div class="region region-footer">
+    <div id="block-soe-log-in-0" class="block block-soe-log-in">
+
+
+<div class="content">
+<a href="https://cmpm265-spring17-50.courses.soe.ucsc.edu/user/login?destination=node/7" rel="nofollow">Log In</a>
+</div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- end page -->
+
+  
+
+</body></html>
